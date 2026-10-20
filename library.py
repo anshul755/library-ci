@@ -46,7 +46,7 @@ class Library:
 
         queue = self.queues[isbn]
         if queue:
-            next_member = queue.pop()          # first come, first served
+            next_member = queue.pop(0)          # first come, first served
             self.loans.setdefault(next_member, set()).add(isbn)
             return next_member
         self.stock[isbn] += 1
